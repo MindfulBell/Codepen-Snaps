@@ -1,4 +1,5 @@
-This is a boiler plate setup that has React, redux, Bootstrap, and SASS.
+##Personal Website showcasing my various projects built as a developer!
+###This website itself uses React-Router
 
 
 
