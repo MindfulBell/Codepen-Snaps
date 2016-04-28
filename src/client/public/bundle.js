@@ -14604,10 +14604,60 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'HOME-ABOUT'
-	        )
+	          'div',
+	          { id: 'landing' },
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'title' },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              'Tim Bell'
+	            ),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Junior Developer'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'about', className: 'container' },
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'aboutTitle' },
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Who'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'leftPar', className: 'aboutPar container-fluid' },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Bacon ipsum dolor amet cupim andouille biltong chuck. Chicken pancetta pork loin shoulder, drumstick kielbasa flank rump boudin cow. Prosciutto beef ribs pork belly brisket drumstick, alcatra bacon pork loin rump. Beef t-bone tenderloin, shankle andouille bresaola short ribs ribeye meatloaf pork prosciutto biltong. Shoulder ribeye strip steak tri-tip, picanha salami kielbasa. Filet mignon shank sausage, andouille fatback short ribs doner. Leberkas pig pastrami shankle strip steak chuck jerky landjaeger pork loin meatloaf biltong.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'rightPar', className: 'aboutPar' },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Bacon ipsum dolor amet cupim andouille biltong chuck. Chicken pancetta pork loin shoulder, drumstick kielbasa flank rump boudin cow. Prosciutto beef ribs pork belly brisket drumstick, alcatra bacon pork loin rump. Beef t-bone tenderloin, shankle andouille bresaola short ribs ribeye meatloaf pork prosciutto biltong. Shoulder ribeye strip steak tri-tip, picanha salami kielbasa. Filet mignon shank sausage, andouille fatback short ribs doner. Leberkas pig pastrami shankle strip steak chuck jerky landjaeger pork loin meatloaf biltong.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'profPic' },
+	            _react2.default.createElement('img', { className: 'img img-responsive', src: 'http://blog.on.com/wp-content/uploads/2014/01/profile-pic.jpg' })
+	          )
+	        ),
+	        _react2.default.createElement('div', { id: 'progress' })
 	      );
 	    }
 	  }]);
@@ -14718,7 +14768,7 @@
 									),
 									_react2.default.createElement(
 											'div',
-											{ style: { marginTop: '100px' } },
+											null,
 											this.props.children
 									)
 							);
@@ -14799,7 +14849,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('img', { src: 'https://ircimg.net/1385557450942.jpg', style: { height: '300px', width: '400px' } }),
+	        _react2.default.createElement('img', { src: '', style: { height: '300px', width: '400px' } }),
 	        _react2.default.createElement('br', null),
 	        this.props.params.projectName
 	      );
@@ -14831,6 +14881,10 @@
 	var _react2 = _interopRequireDefault(_react);
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 51);
+	
+	var _NavLink = __webpack_require__(/*! ./NavLink */ 123);
+	
+	var _NavLink2 = _interopRequireDefault(_NavLink);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -14867,7 +14921,7 @@
 	            'li',
 	            null,
 	            _react2.default.createElement(
-	              _reactRouter.Link,
+	              _NavLink2.default,
 	              { to: '/portfolio/project1' },
 	              'Project 1'
 	            )
@@ -14912,7 +14966,7 @@
 	
 	
 	// module
-	exports.push([module.id, "a:focus {\n  color: tomato;\n  text-decoration: none; }\n\n.activeLink {\n  color: tomato; }\n", ""]);
+	exports.push([module.id, "div {\n  outline: 1px solid black; }\n\n#landing {\n  width: 100%;\n  height: 1000px;\n  background-image: url(\"https://pixabay.com/get/e836b50a2ff6003ed1534705fb0938c9bd22ffd41db7104994f4c67baf/path-1345721_1920.jpg\");\n  background-position: fixed;\n  background-repeat: no-repeat;\n  background-size: cover;\n  color: white;\n  text-align: center; }\n  #landing #title {\n    padding-top: 400px; }\n\n#about {\n  width: 80%; }\n  #about .aboutPar {\n    width: 30%;\n    display: inline; }\n  #about #leftPar {\n    float: left; }\n  #about #rightPar {\n    float: right; }\n  #about #profPic {\n    margin: 0 auto;\n    width: 25%; }\n\na:focus {\n  color: tomato;\n  text-decoration: none; }\n\n.activeLink {\n  color: tomato; }\n", ""]);
 	
 	// exports
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import style from '../public/css/style.scss';
-import { Router, Route, browserHistory, hashHistory, indexRoute } from 'react-router';
+import { Router, Route, browserHistory, hashHistory, IndexRoute } from 'react-router';
 
 import Layout from './routes/Layout'
 import HomeAbout from './routes/Home-About'

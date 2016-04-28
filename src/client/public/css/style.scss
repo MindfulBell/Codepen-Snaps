@@ -1,3 +1,40 @@
+div {
+	outline: 1px solid black;
+}
+
+#landing {
+	width: 100%;
+	height: 1000px;
+	background-image: url('https://pixabay.com/get/e836b50a2ff6003ed1534705fb0938c9bd22ffd41db7104994f4c67baf/path-1345721_1920.jpg');
+	background-position: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	#title {
+		padding-top: 400px;
+	}
+}
+
+#about {
+	width: 80%;
+
+	.aboutPar{
+		width: 30%;
+		display: inline;
+	}
+	#leftPar {		
+		float: left;
+	}
+	#rightPar {
+		float: right;
+	}
+	#profPic {
+		margin: 0 auto;
+		width: 25%;
+	}
+}
+
 a:focus {
 	color: tomato;
 	text-decoration: none;
