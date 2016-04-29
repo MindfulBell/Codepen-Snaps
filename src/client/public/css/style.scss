@@ -1,7 +1,3 @@
-div {
-	outline: 1px solid black;
-}
-
 #landing {
 	width: 100%;
 	height: 1000px;
@@ -16,23 +12,24 @@ div {
 	}
 }
 
-#about {
-	width: 80%;
+.aboutSection {
+	margin: 50px auto;
+	height: 300px;
+	width: 90%;
+}
 
-	.aboutPar{
+#about {
+	background-color: orange;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.aboutItem {
 		width: 30%;
-		display: inline;
-	}
-	#leftPar {		
-		float: left;
-	}
-	#rightPar {
-		float: right;
 	}
 	#profPic {
-		margin: 0 auto;
-		width: 25%;
+		max-width: 275px;
 	}
+
 }
 
 a:focus {
