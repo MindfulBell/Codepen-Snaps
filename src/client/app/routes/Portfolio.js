@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import portfoliodata from '../portfoliodata'
+import PortfolioPiece from './Portfolio-Piece'
 
 import NavLink from './NavLink';
 
 
 export default class Portfolio extends Component {
+  
+  //ANIMATE RESIZING THE FLEXBOX?
 
   render() {
+    let works = portfoliodata.map((piece, ind)=>{
+      let navURL = `/portfolio/${piece.link}`;
+      return(
+          <li key={ind}>
+            <NavLink to={navURL}>
+              <PortfolioPiece 
+                imgSrc={piece.url}
+                name={piece.name} 
+                skills={piece.skills} 
+                time={piece.time} />
+            </NavLink>
+          </li>
+        )
+    })
     return (
       <div>
         <h1>PORTFOLIO</h1>
-        <ul>
-        	<li><NavLink to='/portfolio/project1'>Project 1</NavLink></li>
+        <ul className='portfolio'>
+        	{works}
         </ul>
-        {this.props.children}
       </div>
     );
   }

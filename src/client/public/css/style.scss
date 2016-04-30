@@ -1,7 +1,9 @@
+/**** LANDING ****/
+
 #landing {
 	width: 100%;
 	height: 1000px;
-	background-image: url('https://pixabay.com/get/e836b50a2ff6003ed1534705fb0938c9bd22ffd41db7104994f4c67baf/path-1345721_1920.jpg');
+	background-image: url('https://pixabay.com/get/e135b0062af51c22d9584518a33219c8b66ae3d11fb0184696f8c17f/typewriter-801921_1920.jpg');
 	background-position: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -11,6 +13,9 @@
 		padding-top: 400px;
 	}
 }
+
+
+/**** ABOUT SECTION ****/
 
 .aboutSection {
 	margin: 50px auto;
@@ -31,6 +36,24 @@
 	}
 
 }
+
+/**** PORTFOLIO ****/
+
+.portfolio {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.portfolioPiece {
+	width: 200px;
+	height: 200px;
+	transition: all .2s ease-in-out;
+	flex-grow: 1;
+}
+
+
+/**** BUTTONS ****/
 
 a:focus {
 	color: tomato;
