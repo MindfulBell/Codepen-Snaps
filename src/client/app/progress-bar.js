@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default (props) => {
-    const width = `${props.lvl}%`
+    const width = props.scrollPos < 650 ? 0 : `${props.lvl}%`;
     
     // setup diff colors for bars
     let backgroundColor = (function(lvl){
@@ -19,9 +19,9 @@ export default (props) => {
     return (
         <div>
             <h4 style={{display: 'inline'}}>{props.name}</h4>
-            <div className="progress">
-                <div className='progress-bar' role="progressbar" aria-valuenow="70"
-                aria-valuemin="0" aria-valuemax="100" style={{width, backgroundColor}}>
+            <div className='progressBar'>
+                <div style={{transition: 'all 1s ease', width, backgroundColor, borderRadius: '20px'}}>
+                &nbsp;
                 </div>
             </div>
         </div>
@@ -29,5 +29,4 @@ export default (props) => {
 }
 
 // Would LOVE to animate these bars
-// if i want to do some jquery animation, where does the jquery file go??
-// change color of the bars? 
+// scroll event? So when scroll reaches bottom of page, animate these? Totally do-able

@@ -1,14 +1,26 @@
 $path: '/Users/Tim/Programming/projects/portfolio-page/';
+$headerFont: 'Playfair Display', serif;
+$pFont: 'Open Sans Condensed', sans-serif;
+$specialFont: 'Radley', serif;
 
 /**** GENERAL ****/
 #app {
 	padding: 0;
 }
 .heading {
+	font-family: $headerFont;
 	text-align: center;
 }
 
+h1.heading {
+	font-size: 5em;
+	text-shadow: 2px 2px 5px black;
+}
 
+p {
+	font-family: $pFont;
+	font-size: 1.2em;
+}
 
 /**** LANDING ****/
 
@@ -19,27 +31,42 @@ $path: '/Users/Tim/Programming/projects/portfolio-page/';
 	background-image: url('/portfolio-page/src/client/public/css/landing.jpg');
 	background-size: cover;
 	background-attachment: fixed;
-	color: white;
+	background-position: 50% 50%;
 	text-align: center;
+	color: white;
+	box-shadow: 0px 0px 16px black;
 	#title {
 		padding-top: 400px;
+		h3 {
+			font-family: $specialFont;
+			font-style: italic;
+		}
 	}
 }
 
 
 /**** ABOUT ****/
 
-.aboutSection {
+
+.about {
 	margin: 60px auto;
 	height: 300px;
 	width: 90%;
+
 }
 
-#about {
-	background-color: orange;
+#bio {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 500px;
+	transition: all 1s ease;
+	#leftPar {
+		padding-left: 15px;
+	}
+	#rightPar {
+		padding-right: 15px;
+	}
 	.aboutItem {
 		width: 30%;
 	}
@@ -47,6 +74,12 @@ $path: '/Users/Tim/Programming/projects/portfolio-page/';
 		max-width: 275px;
 	}
 
+}
+
+.progressBar {
+	background-color: black;
+	width: 100%;
+	border-radius: 20px;
 }
 
 /**** PORTFOLIO ****/

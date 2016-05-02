@@ -3,44 +3,63 @@ import ProgressBar from '../progress-bar';
 
 
 export default class HomeAbout extends Component {
-
-  // React-parallax...hmmm
-
+  
+  constructor(props){
+    super(props);
+    this.state={
+      scrollPos: 0,
+      isMounted: false
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+  
+  componentDidMount(){
+    this.setState({isMounted: true})
+    window.addEventListener('scroll', this.handleScroll);
+  }
+  
+  componentWillUnmount(){
+    this.setState({isMounted: false})
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+  
+  handleScroll(){
+    let y = window.pageYOffset;
+    if (this.state.isMounted) {
+      this.setState({scrollPos: y});
+    }
+  }
+  
   render() {
   	const ProgressArr = [
-    ['HTML/CSS', 37], 
-    ['JavaScript', 53], 
-    ['jQuery', 36], 
-    ['React/Redux', 36], 
-    ['Bootstrap', 34], 
-    ['Git/GitHub', 34]
-    ]
+    ['HTML/CSS', 42], 
+    ['JavaScript', 58], 
+    ['jQuery', 41], 
+    ['React/Redux', 41], 
+    ['Bootstrap', 39], 
+    ['Git/GitHub', 36]
+    ];
+    
   	let progressBars = ProgressArr.map((skill,ind)=>{
-  		return <ProgressBar key={ind} name={skill[0]} lvl={skill[1]}/>
-  	})
-    let bgImage='/portfolio-page/src/client/public/css/landing.jpg'
-
-    /*<div id='landing' className='container-fluid'>
-          <div id='title'>
-            <h1>Tim Bell</h1>
-            <h3>Junior Developer</h3>
-          </div>
-        </div>
-        */
+  		return <ProgressBar scrollPos={this.state.scrollPos} key={ind} name={skill[0]} lvl={skill[1]}/>;
+  	});
   	
     return (
       <div>
             <div id='landing' className='container-fluid'>
   	          <div id='title'>
-  	            <h1>Tim Bell</h1>
+  	            <h1 className='heading'>Tim Bell</h1>
   	            <h3>Junior Developer</h3>
   	          </div>
           	</div>
-        
+
           	<div id='aboutTitle'>
           		<h3 className='heading'>Who</h3>
           </div>
-          <div id='about' className='aboutSection'>
+          <div 
+          id='bio' 
+          className='about' 
+          style={this.state.scrollPos < 400 ? {opacity: '0'} : {opacity: '1'}}>
           	<div id='leftPar' className='aboutPar aboutItem'>
   	        	<p>
   	        	Bacon ipsum dolor amet cupim andouille biltong chuck. Chicken pancetta pork loin shoulder, 
@@ -68,7 +87,7 @@ export default class HomeAbout extends Component {
           <div id='skillsTitle'>
           		<h3 className='heading'>Skills</h3>
           </div>
-          <div id='progress' className='aboutSection'>
+          <div id='progress' className='about'>
           		{progressBars}
           </div>
 
