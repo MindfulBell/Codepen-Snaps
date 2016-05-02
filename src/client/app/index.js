@@ -13,11 +13,11 @@ import PortfolioPiece from './routes/Portfolio-Piece'
 
 render((<Router history={hashHistory}>
           <Route path='/' component={Layout}>
-            <Route path='/home-about' component={HomeAbout}/>
-            <Route path='/portfolio' component={Portfolio}>
-              <Route path='/portfolio/:projectName' component={PortfolioPiece}/>
+            <IndexRoute component={HomeAbout}/>
+            <Route path='portfolio' component={Portfolio}>
+              <Route path='portfolio/:projectName' component={PortfolioPiece}/>
             </Route>
-            <Route path='/contact' component={Contact}/>
+            <Route path='contact' component={Contact}/>
           </Route>
         </Router>
   ), document.getElementById('app'));

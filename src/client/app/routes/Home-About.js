@@ -1,25 +1,45 @@
 import React, { Component } from 'react';
 import ProgressBar from '../progress-bar';
+import { Parallax } from 'react-parallax'
 
 
 export default class HomeAbout extends Component {
 
+  // React-parallax...hmmm
+
   render() {
-  	const ProgressArr = [['HTML/CSS', 35], ['JavaScript', 51], ['jQuery', 35], ['React/Redux', 43], ['Bootstrap', 40], ['Git/GitHub', 30]]
+  	const ProgressArr = [
+    ['HTML/CSS', 37], 
+    ['JavaScript', 53], 
+    ['jQuery', 36], 
+    ['React/Redux', 36], 
+    ['Bootstrap', 34], 
+    ['Git/GitHub', 34]
+    ]
   	let progressBars = ProgressArr.map((skill,ind)=>{
   		return <ProgressBar key={ind} name={skill[0]} lvl={skill[1]}/>
   	})
+    let bgImage='/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/landing.jpg'
+
+    /*<div id='landing' className='container-fluid'>
+          <div id='title'>
+            <h1>Tim Bell</h1>
+            <h3>Junior Developer</h3>
+          </div>
+        </div>
+        */
   	
     return (
-      <div>     
-        <div id='landing'>
-	        <div id='title'>
-	        	<h1>Tim Bell</h1>
-	        	<h3>Junior Developer</h3>
-	        </div>
-        </div>
+      <div>
+        <Parallax bgImage={bgImage} strength={400} height={1200}>
+          <div id='title'>
+            <h1>Tim Bell</h1>
+            <h3>Junior Developer</h3>
+          </div>
+        </Parallax>     
+        
         <div id='aboutTitle'>
-        		<h3 style={{width: '10%', margin: '0 auto', textAlign: 'center'}}>Who</h3>
+        		<h3 className='heading'>Who</h3>
         </div>
         <div id='about' className='aboutSection'>
         	<div id='leftPar' className='aboutPar aboutItem'>
@@ -48,7 +68,7 @@ export default class HomeAbout extends Component {
         </div>
         
         <div id='skillsTitle'>
-        		<h3 style={{width: '10%', margin: '0 auto', textAlign: 'center'}}>Skills</h3>
+        		<h3 className='heading'>Skills</h3>
         </div>
         <div id='progress' className='aboutSection'>
         		{progressBars}

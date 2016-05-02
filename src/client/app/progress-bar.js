@@ -1,5 +1,4 @@
 import React from 'react';
-import Progress from 'react-progressbar';
 
 export default (props) => {
     const width = `${props.lvl}%`

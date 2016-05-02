@@ -26,8 +26,8 @@ export default class Portfolio extends Component {
         )
     })
     return (
-      <div>
-        <h1>PORTFOLIO</h1>
+      <div className='page'>
+        <h1 className='heading'>PORTFOLIO</h1>
         <ul className='portfolio'>
         	{works}
         </ul>

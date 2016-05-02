@@ -1,11 +1,22 @@
+$path: '/Users/Tim/Programming/projects/portfolio-page/';
+
+/**** GENERAL ****/
+#app {
+	padding: 0;
+}
+.heading {
+	text-align: center;
+}
+
+
+
 /**** LANDING ****/
 
 #landing {
 	width: 100%;
-	height: 1000px;
-	background-image: url('https://pixabay.com/get/e135b0062af51c22d9584518a33219c8b66ae3d11fb0184696f8c17f/typewriter-801921_1920.jpg');
+	height: 1200px;
+	background-image: url($path + '/src/client/public/css/landing.jpg');
 	background-position: fixed;
-	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
 	text-align: center;
@@ -15,7 +26,7 @@
 }
 
 
-/**** ABOUT SECTION ****/
+/**** ABOUT ****/
 
 .aboutSection {
 	margin: 50px auto;
@@ -43,6 +54,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	list-style-type: none;
 }
 
 .portfolioPiece {
@@ -52,14 +64,49 @@
 	flex-grow: 1;
 }
 
+/**** CONTACT ****/
+
+.btn-grp {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	i {
+		padding-right: 5px;
+	}
+	.btn-lg {
+		display: block;
+		height: 60px;
+		margin: 2px;
+		text-decoration: none;
+		transition: all .3s ease;
+	}
+}
+
+.email-form-group {
+	text-align: center;
+	width: 60%;
+	margin: 0 auto;
+	.email-message {
+		transition: all .5s ease;
+		border: none;
+		resize: none;
+		overflow: auto;
+		outline: none;
+		width: 0px;
+		height: 0px;
+		border-radius: 12px;
+	}
+	.btn-info {
+		border: none;
+		outline: none;
+		width: 70px;
+		display: block;
+		height: 60px;
+		margin: 10px auto;
+		transition: all .3s ease;
+	}
+}
+
+
 
 /**** BUTTONS ****/
-
-a:focus {
-	color: tomato;
-	text-decoration: none;
-}
-
-.activeLink {
-	color: tomato;
-}
