@@ -6,13 +6,13 @@ export default (props) => {
     // setup diff colors for bars
     let backgroundColor = (function(lvl){
         if (lvl <=35) {
-            return '#ffa64d'
+            return '#85B846'
         }
         else if (lvl >= 36 && lvl <= 49) {
-            return '#ffff66'
+            return '#6EB846'
         }
         else {
-            return '#47d147'
+            return '#33CC33'
         }
     }(props.lvl))
 

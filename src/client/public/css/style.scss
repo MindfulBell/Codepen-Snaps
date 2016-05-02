@@ -12,12 +12,13 @@ $path: '/Users/Tim/Programming/projects/portfolio-page/';
 
 /**** LANDING ****/
 
+
 #landing {
 	width: 100%;
-	height: 1200px;
-	background-image: url($path + '/src/client/public/css/landing.jpg');
-	background-position: fixed;
+	height: 100vh;
+	background-image: url('/portfolio-page/src/client/public/css/landing.jpg');
 	background-size: cover;
+	background-attachment: fixed;
 	color: white;
 	text-align: center;
 	#title {
@@ -29,7 +30,7 @@ $path: '/Users/Tim/Programming/projects/portfolio-page/';
 /**** ABOUT ****/
 
 .aboutSection {
-	margin: 50px auto;
+	margin: 60px auto;
 	height: 300px;
 	width: 90%;
 }
