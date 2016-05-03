@@ -3,21 +3,39 @@ $headerFont: 'Playfair Display', serif;
 $pFont: 'Open Sans Condensed', sans-serif;
 $specialFont: 'Radley', serif;
 
-/**** GENERAL ****/
+/**** GENERAL/FONTS/HEADINGS ****/
 #app {
 	padding: 0;
 }
+
 .heading {
 	font-family: $headerFont;
 	text-align: center;
+	margin: 60px;
+}
+
+h3.heading {
+	font-size: 2.5em;
+	border-bottom: 1px solid black;
+	padding-bottom: 50px;
 }
 
 h1.heading {
 	font-size: 5em;
 	text-shadow: 2px 2px 5px black;
+	margin-bottom: 15px;
 }
 
-p {
+#skillsTitle h3 {
+	color: white;
+	text-shadow: 
+	-1px -1px black, 
+	1px 1px black, 
+	-1px 1px black, 
+	1px -1px black;
+}
+
+p, h4 {
 	font-family: $pFont;
 	font-size: 1.2em;
 }
@@ -40,6 +58,9 @@ p {
 		h3 {
 			font-family: $specialFont;
 			font-style: italic;
+			border-bottom: 1px solid white;
+			padding-bottom: 50px;
+			text-shadow: 1px 1px 2px black;
 		}
 	}
 }
@@ -49,10 +70,9 @@ p {
 
 
 .about {
-	margin: 60px auto;
+	margin: 80px auto;
 	height: 300px;
 	width: 90%;
-
 }
 
 #bio {
@@ -75,27 +95,54 @@ p {
 	}
 
 }
+.skillHolder {
+	
+	.progressBar {
+		background-color: #ffe6b3;
+		width: 74%;
+		border-radius: 10px;
+		height: 30px;
+		display: inline-block;
+		border: 1px solid #f0b7a1;
+		
+		.bar {
+			position: relative;
+			top: 5px;
+			left: 5px;
+			border-radius: 10px;
+			transition: all 1s ease-in-out;
+			background: #f0b7a1; /* Old browsers */
+			background: -moz-linear-gradient(top,  #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  #f0b7a1 0%,#8c3310 45%,#8c3310 58%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  #f0b7a1 0%,#8c3310 45%,#8c3310 58%,#bf6e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 ); /* IE6-9 */
+		}
+	}
 
-.progressBar {
-	background-color: black;
-	width: 100%;
-	border-radius: 20px;
+	
 }
 
 /**** PORTFOLIO ****/
 
-.portfolio {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	list-style-type: none;
+.portfolioPage {
+	h1 {
+		margin: 75px auto 50px auto;
+		border-bottom: 1px solid black;
+		padding-bottom: 25px;
+	}
+	.portfolio {
+	}
 }
 
+
 .portfolioPiece {
-	width: 200px;
-	height: 200px;
-	transition: all .2s ease-in-out;
-	flex-grow: 1;
+	margin: 5px;
+	width: 32%;
+	transition: all .3s ease;
+	display: inline-block;
+	img {
+		width: 100%;
+	}
 }
 
 /**** CONTACT ****/
@@ -144,3 +191,39 @@ p {
 
 
 /**** BUTTONS ****/
+
+
+/**** RESPONSIVE ****/
+
+@media (max-width: 795px) {
+	.portfolioPiece {
+		width: 48%;
+	}
+}
+
+@media (min-width: 350px) and (max-width: 546px) {
+	
+	// Home/About
+	#landing {
+		#title {
+			padding-top: 175px;
+		}
+	}
+	
+	h1.heading {
+			font-size: 4em;
+		}
+	
+	
+	//Portfolio 
+	.portfolioPage {
+		background-color: red;
+		
+	}
+	.portfolioPiece {
+		width: 98%;
+	}
+	
+	//Contact 
+
+}

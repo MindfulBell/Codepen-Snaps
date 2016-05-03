@@ -12909,8 +12909,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	exports.default = PortfolioPiece;
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
@@ -12918,41 +12917,22 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function PortfolioPiece(props) {
 	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	  //local URL: /Users/Tim/Programming/projects/portfolio-page/src/client/public/css/portpic.png
+	  //actual src lives in this.props.imgSrc
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	  //need responsiveness here.
 	
-	var PortfolioPiece = function (_Component) {
-	  _inherits(PortfolioPiece, _Component);
-	
-	  function PortfolioPiece() {
-	    _classCallCheck(this, PortfolioPiece);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(PortfolioPiece).apply(this, arguments));
-	  }
-	
-	  _createClass(PortfolioPiece, [{
-	    key: 'render',
-	    value: function render() {
-	      //local URL: /Users/Tim/Programming/projects/portfolio-page/src/client/public/css/portpic.png
-	      //actual src lives in this.props.imgSrc
-	      var temporarySrc = '/portfolio-page/src/client/public/css/portpic.png';
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'portfolioPiece' },
-	        _react2.default.createElement('img', {
-	          className: 'img img-responsive',
-	          src: temporarySrc })
-	      );
-	    }
-	  }]);
-	
-	  return PortfolioPiece;
-	}(_react.Component);
-	
-	exports.default = PortfolioPiece;
+	  var temporarySrc = '/portfolio-page/src/client/public/css/portpic.png';
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'portfolioPiece' },
+	    _react2.default.createElement('img', {
+	      className: 'img img-responsive',
+	      src: temporarySrc })
+	  );
+	}
 
 /***/ },
 /* 136 */
@@ -23096,33 +23076,39 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (props) {
-	    var width = props.scrollPos < 650 ? 0 : props.lvl + '%';
+	    var width = props.scrollPos < 850 ? 0 : props.lvl + '%';
 	
 	    // setup diff colors for bars
-	    var backgroundColor = function (lvl) {
-	        if (lvl <= 35) {
-	            return '#85B846';
-	        } else if (lvl >= 36 && lvl <= 49) {
-	            return '#6EB846';
-	        } else {
-	            return '#33CC33';
-	        }
-	    }(props.lvl);
+	    // let backgroundColor = (function(lvl){
+	    //     if (lvl <=35) {
+	    //         return '#85B846'
+	    //     }
+	    //     else if (lvl >= 36 && lvl <= 49) {
+	    //         return '#6EB846'
+	    //     }
+	    //     else {
+	    //         return '#33CC33'
+	    //     }
+	    // }(props.lvl))
 	
 	    return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'skillHolder' },
 	        _react2.default.createElement(
-	            'h4',
-	            { style: { display: 'inline' } },
-	            props.name
+	            'div',
+	            { style: { width: '15%', display: 'inline-block' } },
+	            _react2.default.createElement(
+	                'h4',
+	                null,
+	                props.name
+	            )
 	        ),
 	        _react2.default.createElement(
 	            'div',
 	            { className: 'progressBar' },
 	            _react2.default.createElement(
 	                'div',
-	                { style: { transition: 'all 1s ease', width: width, backgroundColor: backgroundColor, borderRadius: '20px' } },
+	                { className: 'bar', style: { width: width } },
 	                ' '
 	            )
 	        )
@@ -23170,7 +23156,7 @@
 			_this.state = {
 				value: '',
 				clicked: false,
-				style: { width: '450px', height: '300px', boxShadow: '0px 0px 8px #5bc0de' },
+				style: { width: '100%', height: '300px', boxShadow: '0px 0px 8px #5bc0de' },
 				emailSent: false,
 				header: 'Let\'s Connect!'
 			};
@@ -23198,7 +23184,7 @@
 				var anchor = 'mailto:tim.bell02@gmail.com?&body=' + this.state.value;
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: 'container-fluid' },
 					_react2.default.createElement(
 						'h1',
 						{ className: 'heading' },
@@ -23657,45 +23643,61 @@
 	var Portfolio = function (_Component) {
 	  _inherits(Portfolio, _Component);
 	
-	  function Portfolio() {
+	  //ANIMATE RESIZING THE FLEXBOX?
+	
+	  function Portfolio(props) {
 	    _classCallCheck(this, Portfolio);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Portfolio).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Portfolio).call(this, props));
+	
+	    _this.state = {
+	      width: 0
+	    };
+	    _this.handleResize = _this.handleResize.bind(_this);
+	    return _this;
 	  }
 	
 	  _createClass(Portfolio, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.setState({ width: window.innerWidth });
+	      window.addEventListener('resize', this.handleResize);
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      window.removeEventListener('resize', this.handleResize);
+	    }
+	  }, {
+	    key: 'handleResize',
+	    value: function handleResize() {
+	      this.setState({});
+	    }
+	  }, {
 	    key: 'render',
-	
-	
-	    //ANIMATE RESIZING THE FLEXBOX?
-	
 	    value: function render() {
 	      var works = _portfoliodata2.default.map(function (piece, ind) {
 	        var navURL = '/portfolio/' + piece.link;
 	        return _react2.default.createElement(
-	          'li',
-	          { key: ind },
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: navURL },
-	            _react2.default.createElement(_PortfolioPiece2.default, {
-	              imgSrc: piece.url,
-	              name: piece.name,
-	              skills: piece.skills,
-	              time: piece.time })
-	          )
+	          _NavLink2.default,
+	          { to: navURL, key: ind },
+	          _react2.default.createElement(_PortfolioPiece2.default, {
+	            imgSrc: piece.url,
+	            name: piece.name,
+	            skills: piece.skills,
+	            time: piece.time })
 	        );
 	      });
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'page' },
+	        { className: 'portfolioPage container-fluid' },
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'heading' },
 	          'PORTFOLIO'
 	        ),
 	        _react2.default.createElement(
-	          'ul',
+	          'div',
 	          { className: 'portfolio' },
 	          works
 	        )
@@ -23737,7 +23739,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/**** GENERAL ****/\n#app {\n  padding: 0; }\n\n.heading {\n  font-family: \"Playfair Display\", serif;\n  text-align: center; }\n\nh1.heading {\n  font-size: 5em;\n  text-shadow: 2px 2px 5px black; }\n\np {\n  font-family: \"Open Sans Condensed\", sans-serif;\n  font-size: 1.2em; }\n\n/**** LANDING ****/\n#landing {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"/portfolio-page/src/client/public/css/landing.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: 50% 50%;\n  text-align: center;\n  color: white;\n  box-shadow: 0px 0px 16px black; }\n  #landing #title {\n    padding-top: 400px; }\n    #landing #title h3 {\n      font-family: \"Radley\", serif;\n      font-style: italic; }\n\n/**** ABOUT ****/\n.about {\n  margin: 60px auto;\n  height: 300px;\n  width: 90%; }\n\n#bio {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 500px;\n  transition: all 1s ease; }\n  #bio #leftPar {\n    padding-left: 15px; }\n  #bio #rightPar {\n    padding-right: 15px; }\n  #bio .aboutItem {\n    width: 30%; }\n  #bio #profPic {\n    max-width: 275px; }\n\n.progressBar {\n  background-color: black;\n  width: 100%;\n  border-radius: 20px; }\n\n/**** PORTFOLIO ****/\n.portfolio {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  list-style-type: none; }\n\n.portfolioPiece {\n  width: 200px;\n  height: 200px;\n  transition: all .2s ease-in-out;\n  flex-grow: 1; }\n\n/**** CONTACT ****/\n.btn-grp {\n  text-align: center;\n  display: flex;\n  justify-content: center; }\n  .btn-grp i {\n    padding-right: 5px; }\n  .btn-grp .btn-lg {\n    display: block;\n    height: 60px;\n    margin: 2px;\n    text-decoration: none;\n    transition: all .3s ease; }\n\n.email-form-group {\n  text-align: center;\n  width: 60%;\n  margin: 0 auto; }\n  .email-form-group .email-message {\n    transition: all .5s ease;\n    border: none;\n    resize: none;\n    overflow: auto;\n    outline: none;\n    width: 0px;\n    height: 0px;\n    border-radius: 12px; }\n  .email-form-group .btn-info {\n    border: none;\n    outline: none;\n    width: 70px;\n    display: block;\n    height: 60px;\n    margin: 10px auto;\n    transition: all .3s ease; }\n\n/**** BUTTONS ****/\n", ""]);
+	exports.push([module.id, "/**** GENERAL/FONTS/HEADINGS ****/\n#app {\n  padding: 0; }\n\n.heading {\n  font-family: \"Playfair Display\", serif;\n  text-align: center;\n  margin: 60px; }\n\nh3.heading {\n  font-size: 2.5em;\n  border-bottom: 1px solid black;\n  padding-bottom: 50px; }\n\nh1.heading {\n  font-size: 5em;\n  text-shadow: 2px 2px 5px black;\n  margin-bottom: 15px; }\n\n#skillsTitle h3 {\n  color: white;\n  text-shadow: -1px -1px black,  1px 1px black,  -1px 1px black,  1px -1px black; }\n\np, h4 {\n  font-family: \"Open Sans Condensed\", sans-serif;\n  font-size: 1.2em; }\n\n/**** LANDING ****/\n#landing {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"/portfolio-page/src/client/public/css/landing.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: 50% 50%;\n  text-align: center;\n  color: white;\n  box-shadow: 0px 0px 16px black; }\n  #landing #title {\n    padding-top: 400px; }\n    #landing #title h3 {\n      font-family: \"Radley\", serif;\n      font-style: italic;\n      border-bottom: 1px solid white;\n      padding-bottom: 50px;\n      text-shadow: 1px 1px 2px black; }\n\n/**** ABOUT ****/\n.about {\n  margin: 80px auto;\n  height: 300px;\n  width: 90%; }\n\n#bio {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 500px;\n  transition: all 1s ease; }\n  #bio #leftPar {\n    padding-left: 15px; }\n  #bio #rightPar {\n    padding-right: 15px; }\n  #bio .aboutItem {\n    width: 30%; }\n  #bio #profPic {\n    max-width: 275px; }\n\n.skillHolder .progressBar {\n  background-color: #ffe6b3;\n  width: 74%;\n  border-radius: 10px;\n  height: 30px;\n  display: inline-block;\n  border: 1px solid #f0b7a1; }\n  .skillHolder .progressBar .bar {\n    position: relative;\n    top: 5px;\n    left: 5px;\n    border-radius: 10px;\n    transition: all 1s ease-in-out;\n    background: #f0b7a1;\n    /* Old browsers */\n    background: -moz-linear-gradient(top, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 );\n    /* IE6-9 */ }\n\n/**** PORTFOLIO ****/\n.portfolioPage h1 {\n  margin: 75px auto 50px auto;\n  border-bottom: 1px solid black;\n  padding-bottom: 25px; }\n\n.portfolioPiece {\n  margin: 5px;\n  width: 32%;\n  transition: all .3s ease;\n  display: inline-block; }\n  .portfolioPiece img {\n    width: 100%; }\n\n/**** CONTACT ****/\n.btn-grp {\n  text-align: center;\n  display: flex;\n  justify-content: center; }\n  .btn-grp i {\n    padding-right: 5px; }\n  .btn-grp .btn-lg {\n    display: block;\n    height: 60px;\n    margin: 2px;\n    text-decoration: none;\n    transition: all .3s ease; }\n\n.email-form-group {\n  text-align: center;\n  width: 60%;\n  margin: 0 auto; }\n  .email-form-group .email-message {\n    transition: all .5s ease;\n    border: none;\n    resize: none;\n    overflow: auto;\n    outline: none;\n    width: 0px;\n    height: 0px;\n    border-radius: 12px; }\n  .email-form-group .btn-info {\n    border: none;\n    outline: none;\n    width: 70px;\n    display: block;\n    height: 60px;\n    margin: 10px auto;\n    transition: all .3s ease; }\n\n/**** BUTTONS ****/\n/**** RESPONSIVE ****/\n@media (max-width: 795px) {\n  .portfolioPiece {\n    width: 48%; } }\n\n@media (min-width: 350px) and (max-width: 546px) {\n  #landing #title {\n    padding-top: 175px; }\n  h1.heading {\n    font-size: 4em; }\n  .portfolioPage {\n    background-color: red; }\n  .portfolioPiece {\n    width: 98%; } }\n", ""]);
 	
 	// exports
 

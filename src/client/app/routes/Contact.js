@@ -6,7 +6,7 @@ export default class Contact extends Component {
 		this.state = {
 			value: '',
 			clicked: false,
-			style: {  width: '450px', height: '300px', boxShadow: '0px 0px 8px #5bc0de' },
+			style: {  width: '100%', height: '300px', boxShadow: '0px 0px 8px #5bc0de' },
 			emailSent: false,
 			header: 'Let\'s Connect!'
 		}
@@ -27,7 +27,7 @@ export default class Contact extends Component {
   render() {
   	let anchor = `mailto:tim.bell02@gmail.com?&body=${this.state.value}`
     return (
-    	<div>
+    	<div className='container-fluid'>
     		<h1 className='heading'>Contact</h1>
 	      <div className="container container-fluid btn-grp">
 	      	<div className='link-wrapper'>

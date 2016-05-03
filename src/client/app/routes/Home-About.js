@@ -55,7 +55,7 @@ export default class HomeAbout extends Component {
 
           	<div id='aboutTitle'>
           		<h3 className='heading'>Who</h3>
-          </div>
+            </div>
           <div 
           id='bio' 
           className='about' 
