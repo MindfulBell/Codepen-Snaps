@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
 
-export default function PortfolioPiece(props) {
+export default (props) => {
  
-    //local URL: /Users/Tim/Programming/projects/portfolio-page/src/client/public/css/portpic.png
     //actual src lives in this.props.imgSrc
     
     //need responsiveness here.
     
 
-    let temporarySrc = '/portfolio-page/src/client/public/css/portpic.png'
+    let temporarySrc = '/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/portpic.png'
     return (
       <div className='portfolioPiece'>
         <img 

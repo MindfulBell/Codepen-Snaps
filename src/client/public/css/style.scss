@@ -1,4 +1,4 @@
-$path: '/Users/Tim/Programming/projects/portfolio-page/';
+$path: '/Users/Tim/Programming/projects';
 $headerFont: 'Playfair Display', serif;
 $pFont: 'Open Sans Condensed', sans-serif;
 $specialFont: 'Radley', serif;
@@ -40,13 +40,34 @@ p, h4 {
 	font-size: 1.2em;
 }
 
+	// Animations for React Router shifts
+
+.pageShift-enter {
+	opacity: 0.01;
+	transition: opacity .5s ease-in;
+}
+
+.pageShift-enter.pageShift-enter-active {
+	opacity: 1;
+}
+
+.pageShift-leave {
+	opacity: 1;
+	transition: opacity .1s ease-in;
+}
+
+.pageShift-enter.pageShift-leave-active {
+	opacity: 0.01;
+}
+
+
 /**** LANDING ****/
 
 
 #landing {
 	width: 100%;
 	height: 100vh;
-	background-image: url('/portfolio-page/src/client/public/css/landing.jpg');
+	background-image: url('/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/landing.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: 50% 50%;
@@ -146,6 +167,10 @@ p, h4 {
 }
 
 /**** CONTACT ****/
+
+.contact {
+	height: 100vh;
+}
 
 .btn-grp {
 	text-align: center;

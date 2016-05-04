@@ -32,12 +32,12 @@ export default class HomeAbout extends Component {
   
   render() {
   	const ProgressArr = [
-    ['HTML/CSS', 42], 
-    ['JavaScript', 58], 
-    ['jQuery', 41], 
-    ['React/Redux', 41], 
-    ['Bootstrap', 39], 
-    ['Git/GitHub', 36]
+    ['HTML/CSS', 37], 
+    ['JavaScript', 49], 
+    ['jQuery', 36], 
+    ['React/Redux', 36], 
+    ['Bootstrap', 34], 
+    ['Git/GitHub', 37]
     ];
     
   	let progressBars = ProgressArr.map((skill,ind)=>{

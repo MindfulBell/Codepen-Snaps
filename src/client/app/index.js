@@ -14,9 +14,7 @@ import PortfolioPiece from './routes/Portfolio-Piece'
 render((<Router history={hashHistory}>
           <Route path='/' component={Layout}>
             <IndexRoute component={HomeAbout}/>
-            <Route path='portfolio' component={Portfolio}>
-              <Route path='portfolio/:projectName' component={PortfolioPiece}/>
-            </Route>
+            <Route path='portfolio' component={Portfolio}/>           
             <Route path='contact' component={Contact}/>
           </Route>
         </Router>

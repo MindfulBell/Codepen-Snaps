@@ -27,7 +27,7 @@ export default class Contact extends Component {
   render() {
   	let anchor = `mailto:tim.bell02@gmail.com?&body=${this.state.value}`
     return (
-    	<div className='container-fluid'>
+    	<div className='container-fluid contact'>
     		<h1 className='heading'>Contact</h1>
 	      <div className="container container-fluid btn-grp">
 	      	<div className='link-wrapper'>
