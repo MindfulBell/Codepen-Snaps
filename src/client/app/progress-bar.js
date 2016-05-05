@@ -18,7 +18,7 @@ export default (props) => {
 
     return (
         <div className='skillHolder'>
-            <div style={{width: '15%', display: 'inline-block'}}>
+            <div className='skillTitle'>
                 <h4>{props.name}</h4>
             </div>
             <div className='progressBar'>
@@ -29,6 +29,3 @@ export default (props) => {
         </div>
     )
 }
-
-// Would LOVE to animate these bars
-// scroll event? So when scroll reaches bottom of page, animate these? Totally do-able

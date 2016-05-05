@@ -6,7 +6,7 @@ export default class Contact extends Component {
 		this.state = {
 			value: '',
 			clicked: false,
-			style: {  width: '100%', height: '300px', boxShadow: '0px 0px 8px #5bc0de' },
+			style: {  width: '100%', height: '300px' },
 			emailSent: false,
 			header: 'Let\'s Connect!'
 		}
@@ -63,6 +63,7 @@ export default class Contact extends Component {
 		        </a>
 		      </div>
 	    </div>
+
 	    <div className='email-form-group'>
 	    	<h3 className='heading'>
 	    		{this.state.header}

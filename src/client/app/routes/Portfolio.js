@@ -4,6 +4,7 @@ import portfoliodata from '../portfoliodata'
 import PortfolioPiece from './Portfolio-Piece'
 
 import NavLink from './NavLink';
+import ContinueLink from '../continue-link'
 
 
 export default class Portfolio extends Component {
@@ -12,30 +13,34 @@ export default class Portfolio extends Component {
   
   constructor(props){
     super(props);
-    this.state = {
-      width: 0
+    this.state={
+      scrollPos: 0,
+      isMounted: false
     };
-    this.handleResize = this.handleResize.bind(this)
+    this.handleScroll = this.handleScroll.bind(this);
   }
   
   componentDidMount(){
-    this.setState({width: window.innerWidth})
-    window.addEventListener('resize', this.handleResize)
+    this.setState({isMounted: true})
+    window.addEventListener('scroll', this.handleScroll);
   }
   
   componentWillUnmount(){
-    window.removeEventListener('resize', this.handleResize)
+    this.setState({isMounted: false})
+    window.removeEventListener('scroll', this.handleScroll);
   }
   
-  handleResize(){
-    this.setState({
-      
-    })
+  handleScroll(){
+    let y = window.pageYOffset;
+    if (this.state.isMounted) {
+      this.setState({scrollPos: y});
+    }
   }
+
 
   render() {
     let works = portfoliodata.map((piece, ind)=>{
-      let navURL = `/portfolio/${piece.link}`;
+    let navURL = `/portfolio/${piece.link}`;
       return(
             <NavLink to={navURL} key={ind}>
               <PortfolioPiece 
@@ -53,6 +58,7 @@ export default class Portfolio extends Component {
         <div className='portfolio'>
         	{works}
         </div>
+        <ContinueLink to='Contact' y={this.state.scrollPos}/>
       </div>
     );
   }

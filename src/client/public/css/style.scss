@@ -35,29 +35,43 @@ h1.heading {
 	1px -1px black;
 }
 
-p, h4 {
+p, h4, button, a {
 	font-family: $pFont;
 	font-size: 1.2em;
 }
+
 
 	// Animations for React Router shifts
 
 .pageShift-enter {
 	opacity: 0.01;
-	transition: opacity .5s ease-in;
 }
 
 .pageShift-enter.pageShift-enter-active {
+	transition-property: opacity;
+	transition-duration: 500ms;
+	transition-timing-function: ease-in-out;
 	opacity: 1;
 }
 
 .pageShift-leave {
 	opacity: 1;
-	transition: opacity .1s ease-in;
+	transition: all 500ms ease-in-out;
 }
 
 .pageShift-enter.pageShift-leave-active {
 	opacity: 0.01;
+}
+
+.continue {
+	width: 150px;
+	margin: 40px auto;
+	transition: opacity 1s ease-in;
+	text-align: center;
+	font-size: 1.5em;
+	i {
+		color: black;
+	}
 }
 
 
@@ -111,16 +125,17 @@ p, h4 {
 	.aboutItem {
 		width: 30%;
 	}
-	#profPic {
-		max-width: 275px;
-	}
-
 }
 .skillHolder {
+
+	.skillTitle {
+		display: inline-block;
+		width: 12%;
+	}
 	
 	.progressBar {
 		background-color: #ffe6b3;
-		width: 74%;
+		width: 84%;
 		border-radius: 10px;
 		height: 30px;
 		display: inline-block;
@@ -179,20 +194,30 @@ p, h4 {
 	i {
 		padding-right: 5px;
 	}
-	.btn-lg {
+	
+}
+
+.btn-lg {
 		display: block;
-		height: 60px;
-		margin: 2px;
+		margin: 5px;
 		text-decoration: none;
 		transition: all .3s ease;
-	}
+		&:hover {
+			background-color: white;
+			color: #337ab7;
+	}	
 }
 
 .email-form-group {
 	text-align: center;
 	width: 60%;
 	margin: 0 auto;
+	h3 {
+		width: 100%;
+		margin: 20px auto;
+	}
 	.email-message {
+		box-shadow: 0px 0px 8px black;	
 		transition: all .5s ease;
 		border: none;
 		resize: none;
@@ -200,7 +225,8 @@ p, h4 {
 		outline: none;
 		width: 0px;
 		height: 0px;
-		border-radius: 12px;
+		font-family: $pFont;
+		font-size: 1.5em;
 	}
 	.btn-info {
 		border: none;
@@ -211,6 +237,7 @@ p, h4 {
 		margin: 10px auto;
 		transition: all .3s ease;
 	}
+	
 }
 
 
@@ -224,9 +251,31 @@ p, h4 {
 	.portfolioPiece {
 		width: 48%;
 	}
+	#bio {
+		flex-direction: column;
+		height: 500px;
+		.aboutItem {
+			width: 90%;	
+			margin: 15px auto;		
+		}
+		#leftPar {
+				padding: 0;
+		}
+		#rightPar {
+			padding: 0;
+		}
+	}
+	.skillsSection {
+		margin-top: 350px;
+	}
 }
 
-@media (min-width: 350px) and (max-width: 546px) {
+@media (max-width: 546px) {
+
+	.nav {
+		text-align: center;
+
+	}
 	
 	// Home/About
 	#landing {
@@ -234,21 +283,35 @@ p, h4 {
 			padding-top: 175px;
 		}
 	}
-	
+
+	.skillHolder {
+		.skillTitle {
+			width: 25%;
+		}
+		.progressBar {
+			width: 75%;
+		}
+	}
 	h1.heading {
 			font-size: 4em;
 		}
 	
 	
 	//Portfolio 
-	.portfolioPage {
-		background-color: red;
-		
-	}
 	.portfolioPiece {
 		width: 98%;
 	}
 	
 	//Contact 
 
+	.btn-grp {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.email-form-group {
+		padding-right: 15px;
+		margin: 5px auto;
+		width: 75vw;
+	}
 }

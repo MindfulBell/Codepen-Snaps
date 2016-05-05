@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProgressBar from '../progress-bar';
+import ContinueLink from '../continue-link';
 
 
 export default class HomeAbout extends Component {
@@ -71,7 +72,7 @@ export default class HomeAbout extends Component {
   	        	</p>
           	</div>
           	<div id='profPic' className='aboutItem'>
-          		<img className='img img-responsive'src=''/>
+          		<img className='img img-responsive'src='/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/me.jpg'/>
           	</div>
           	<div id='rightPar' className='aboutPar aboutItem'>
   	        	<p>
@@ -84,13 +85,15 @@ export default class HomeAbout extends Component {
   	        	</p>
           	</div>
           </div>
-          <div id='skillsTitle'>
-          		<h3 className='heading'>Skills</h3>
+          <div className='skillsSection'>
+            <div id='skillsTitle'>
+            		<h3 className='heading'>Skills</h3>
+            </div>
+            <div id='progress' className='about'>
+            		{progressBars}
+            </div>
           </div>
-          <div id='progress' className='about'>
-          		{progressBars}
-          </div>
-
+          <ContinueLink to='Portfolio' y={this.state.scrollPos} />
       </div>
     );
   }

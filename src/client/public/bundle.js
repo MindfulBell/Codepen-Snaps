@@ -89,7 +89,9 @@
 	
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
-	  { history: _reactRouter.hashHistory },
+	  { onUpdate: function onUpdate() {
+	      return window.scrollTo(0, 0);
+	    }, history: _reactRouter.hashHistory },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _Layout2.default },
@@ -23119,7 +23121,7 @@
 	        { className: 'skillHolder' },
 	        _react2.default.createElement(
 	            'div',
-	            { style: { width: '15%', display: 'inline-block' } },
+	            { className: 'skillTitle' },
 	            _react2.default.createElement(
 	                'h4',
 	                null,
@@ -23137,9 +23139,6 @@
 	        )
 	    );
 	};
-	
-	// Would LOVE to animate these bars
-	// scroll event? So when scroll reaches bottom of page, animate these? Totally do-able
 
 /***/ },
 /* 244 */
@@ -23179,7 +23178,7 @@
 			_this.state = {
 				value: '',
 				clicked: false,
-				style: { width: '100%', height: '300px', boxShadow: '0px 0px 8px #5bc0de' },
+				style: { width: '100%', height: '300px' },
 				emailSent: false,
 				header: 'Let\'s Connect!'
 			};
@@ -23335,6 +23334,10 @@
 	
 	var _progressBar2 = _interopRequireDefault(_progressBar);
 	
+	var _continueLink = __webpack_require__(/*! ../continue-link */ 508);
+	
+	var _continueLink2 = _interopRequireDefault(_continueLink);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23438,7 +23441,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { id: 'profPic', className: 'aboutItem' },
-	            _react2.default.createElement('img', { className: 'img img-responsive', src: '' })
+	            _react2.default.createElement('img', { className: 'img img-responsive', src: '/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/me.jpg' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -23452,18 +23455,23 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { id: 'skillsTitle' },
+	          { className: 'skillsSection' },
 	          _react2.default.createElement(
-	            'h3',
-	            { className: 'heading' },
-	            'Skills'
+	            'div',
+	            { id: 'skillsTitle' },
+	            _react2.default.createElement(
+	              'h3',
+	              { className: 'heading' },
+	              'Skills'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'progress', className: 'about' },
+	            progressBars
 	          )
 	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'progress', className: 'about' },
-	          progressBars
-	        )
+	        _react2.default.createElement(_continueLink2.default, { to: 'Portfolio', y: this.state.scrollPos })
 	      );
 	    }
 	  }]);
@@ -23663,6 +23671,10 @@
 	
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 	
+	var _continueLink = __webpack_require__(/*! ../continue-link */ 508);
+	
+	var _continueLink2 = _interopRequireDefault(_continueLink);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23682,27 +23694,32 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Portfolio).call(this, props));
 	
 	    _this.state = {
-	      width: 0
+	      scrollPos: 0,
+	      isMounted: false
 	    };
-	    _this.handleResize = _this.handleResize.bind(_this);
+	    _this.handleScroll = _this.handleScroll.bind(_this);
 	    return _this;
 	  }
 	
 	  _createClass(Portfolio, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      this.setState({ width: window.innerWidth });
-	      window.addEventListener('resize', this.handleResize);
+	      this.setState({ isMounted: true });
+	      window.addEventListener('scroll', this.handleScroll);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      window.removeEventListener('resize', this.handleResize);
+	      this.setState({ isMounted: false });
+	      window.removeEventListener('scroll', this.handleScroll);
 	    }
 	  }, {
-	    key: 'handleResize',
-	    value: function handleResize() {
-	      this.setState({});
+	    key: 'handleScroll',
+	    value: function handleScroll() {
+	      var y = window.pageYOffset;
+	      if (this.state.isMounted) {
+	        this.setState({ scrollPos: y });
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -23731,7 +23748,8 @@
 	          'div',
 	          { className: 'portfolio' },
 	          works
-	        )
+	        ),
+	        _react2.default.createElement(_continueLink2.default, { to: 'Contact', y: this.state.scrollPos })
 	      );
 	    }
 	  }]);
@@ -24029,7 +24047,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/**** GENERAL/FONTS/HEADINGS ****/\n#app {\n  padding: 0; }\n\n.heading {\n  font-family: \"Playfair Display\", serif;\n  text-align: center;\n  margin: 60px; }\n\nh3.heading {\n  font-size: 2.5em;\n  border-bottom: 1px solid black;\n  padding-bottom: 50px; }\n\nh1.heading {\n  font-size: 5em;\n  text-shadow: 2px 2px 5px black;\n  margin-bottom: 15px; }\n\n#skillsTitle h3 {\n  color: white;\n  text-shadow: -1px -1px black, \r 1px 1px black, \r -1px 1px black, \r 1px -1px black; }\n\np, h4 {\n  font-family: \"Open Sans Condensed\", sans-serif;\n  font-size: 1.2em; }\n\n.pageShift-enter {\n  opacity: 0.01;\n  transition: opacity .5s ease-in; }\n\n.pageShift-enter.pageShift-enter-active {\n  opacity: 1; }\n\n.pageShift-leave {\n  opacity: 1;\n  transition: opacity .1s ease-in; }\n\n.pageShift-enter.pageShift-leave-active {\n  opacity: 0.01; }\n\n/**** LANDING ****/\n#landing {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/landing.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: 50% 50%;\n  text-align: center;\n  color: white;\n  box-shadow: 0px 0px 16px black; }\n  #landing #title {\n    padding-top: 400px; }\n    #landing #title h3 {\n      font-family: \"Radley\", serif;\n      font-style: italic;\n      border-bottom: 1px solid white;\n      padding-bottom: 50px;\n      text-shadow: 1px 1px 2px black; }\n\n/**** ABOUT ****/\n.about {\n  margin: 80px auto;\n  height: 300px;\n  width: 90%; }\n\n#bio {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 500px;\n  transition: all 1s ease; }\n  #bio #leftPar {\n    padding-left: 15px; }\n  #bio #rightPar {\n    padding-right: 15px; }\n  #bio .aboutItem {\n    width: 30%; }\n  #bio #profPic {\n    max-width: 275px; }\n\n.skillHolder .progressBar {\n  background-color: #ffe6b3;\n  width: 74%;\n  border-radius: 10px;\n  height: 30px;\n  display: inline-block;\n  border: 1px solid #f0b7a1; }\n  .skillHolder .progressBar .bar {\n    position: relative;\n    top: 5px;\n    left: 5px;\n    border-radius: 10px;\n    transition: all 1s ease-in-out;\n    background: #f0b7a1;\n    /* Old browsers */\n    background: -moz-linear-gradient(top, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 );\n    /* IE6-9 */ }\n\n/**** PORTFOLIO ****/\n.portfolioPage h1 {\n  margin: 75px auto 50px auto;\n  border-bottom: 1px solid black;\n  padding-bottom: 25px; }\n\n.portfolioPiece {\n  margin: 5px;\n  width: 32%;\n  transition: all .3s ease;\n  display: inline-block; }\n  .portfolioPiece img {\n    width: 100%; }\n\n/**** CONTACT ****/\n.contact {\n  height: 100vh; }\n\n.btn-grp {\n  text-align: center;\n  display: flex;\n  justify-content: center; }\n  .btn-grp i {\n    padding-right: 5px; }\n  .btn-grp .btn-lg {\n    display: block;\n    height: 60px;\n    margin: 2px;\n    text-decoration: none;\n    transition: all .3s ease; }\n\n.email-form-group {\n  text-align: center;\n  width: 60%;\n  margin: 0 auto; }\n  .email-form-group .email-message {\n    transition: all .5s ease;\n    border: none;\n    resize: none;\n    overflow: auto;\n    outline: none;\n    width: 0px;\n    height: 0px;\n    border-radius: 12px; }\n  .email-form-group .btn-info {\n    border: none;\n    outline: none;\n    width: 70px;\n    display: block;\n    height: 60px;\n    margin: 10px auto;\n    transition: all .3s ease; }\n\n/**** BUTTONS ****/\n/**** RESPONSIVE ****/\n@media (max-width: 795px) {\n  .portfolioPiece {\n    width: 48%; } }\n\n@media (min-width: 350px) and (max-width: 546px) {\n  #landing #title {\n    padding-top: 175px; }\n  h1.heading {\n    font-size: 4em; }\n  .portfolioPage {\n    background-color: red; }\n  .portfolioPiece {\n    width: 98%; } }\n", ""]);
+	exports.push([module.id, "/**** GENERAL/FONTS/HEADINGS ****/\n#app {\n  padding: 0; }\n\n.heading {\n  font-family: \"Playfair Display\", serif;\n  text-align: center;\n  margin: 60px; }\n\nh3.heading {\n  font-size: 2.5em;\n  border-bottom: 1px solid black;\n  padding-bottom: 50px; }\n\nh1.heading {\n  font-size: 5em;\n  text-shadow: 2px 2px 5px black;\n  margin-bottom: 15px; }\n\n#skillsTitle h3 {\n  color: white;\n  text-shadow: -1px -1px black, \r 1px 1px black, \r -1px 1px black, \r 1px -1px black; }\n\np, h4, button, a {\n  font-family: \"Open Sans Condensed\", sans-serif;\n  font-size: 1.2em; }\n\n.pageShift-enter {\n  opacity: 0.01; }\n\n.pageShift-enter.pageShift-enter-active {\n  transition-property: opacity;\n  transition-duration: 500ms;\n  transition-timing-function: ease-in-out;\n  opacity: 1; }\n\n.pageShift-leave {\n  opacity: 1;\n  transition: all 500ms ease-in-out; }\n\n.pageShift-enter.pageShift-leave-active {\n  opacity: 0.01; }\n\n.continue {\n  width: 150px;\n  margin: 40px auto;\n  transition: opacity 1s ease-in;\n  text-align: center;\n  font-size: 1.5em; }\n  .continue i {\n    color: black; }\n\n/**** LANDING ****/\n#landing {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/landing.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: 50% 50%;\n  text-align: center;\n  color: white;\n  box-shadow: 0px 0px 16px black; }\n  #landing #title {\n    padding-top: 400px; }\n    #landing #title h3 {\n      font-family: \"Radley\", serif;\n      font-style: italic;\n      border-bottom: 1px solid white;\n      padding-bottom: 50px;\n      text-shadow: 1px 1px 2px black; }\n\n/**** ABOUT ****/\n.about {\n  margin: 80px auto;\n  height: 300px;\n  width: 90%; }\n\n#bio {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 500px;\n  transition: all 1s ease; }\n  #bio #leftPar {\n    padding-left: 15px; }\n  #bio #rightPar {\n    padding-right: 15px; }\n  #bio .aboutItem {\n    width: 30%; }\n\n.skillHolder .skillTitle {\n  display: inline-block;\n  width: 12%; }\n\n.skillHolder .progressBar {\n  background-color: #ffe6b3;\n  width: 84%;\n  border-radius: 10px;\n  height: 30px;\n  display: inline-block;\n  border: 1px solid #f0b7a1; }\n  .skillHolder .progressBar .bar {\n    position: relative;\n    top: 5px;\n    left: 5px;\n    border-radius: 10px;\n    transition: all 1s ease-in-out;\n    background: #f0b7a1;\n    /* Old browsers */\n    background: -moz-linear-gradient(top, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%);\n    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 );\n    /* IE6-9 */ }\n\n/**** PORTFOLIO ****/\n.portfolioPage h1 {\n  margin: 75px auto 50px auto;\n  border-bottom: 1px solid black;\n  padding-bottom: 25px; }\n\n.portfolioPiece {\n  margin: 5px;\n  width: 32%;\n  transition: all .3s ease;\n  display: inline-block; }\n  .portfolioPiece img {\n    width: 100%; }\n\n/**** CONTACT ****/\n.contact {\n  height: 100vh; }\n\n.btn-grp {\n  text-align: center;\n  display: flex;\n  justify-content: center; }\n  .btn-grp i {\n    padding-right: 5px; }\n\n.btn-lg {\n  display: block;\n  margin: 5px;\n  text-decoration: none;\n  transition: all .3s ease; }\n  .btn-lg:hover {\n    background-color: white;\n    color: #337ab7; }\n\n.email-form-group {\n  text-align: center;\n  width: 60%;\n  margin: 0 auto; }\n  .email-form-group h3 {\n    width: 100%;\n    margin: 20px auto; }\n  .email-form-group .email-message {\n    box-shadow: 0px 0px 8px black;\n    transition: all .5s ease;\n    border: none;\n    resize: none;\n    overflow: auto;\n    outline: none;\n    width: 0px;\n    height: 0px;\n    font-family: \"Open Sans Condensed\", sans-serif;\n    font-size: 1.5em; }\n  .email-form-group .btn-info {\n    border: none;\n    outline: none;\n    width: 70px;\n    display: block;\n    height: 60px;\n    margin: 10px auto;\n    transition: all .3s ease; }\n\n/**** BUTTONS ****/\n/**** RESPONSIVE ****/\n@media (max-width: 795px) {\n  .portfolioPiece {\n    width: 48%; }\n  #bio {\n    flex-direction: column;\n    height: 500px; }\n    #bio .aboutItem {\n      width: 90%;\n      margin: 15px auto; }\n    #bio #leftPar {\n      padding: 0; }\n    #bio #rightPar {\n      padding: 0; }\n  .skillsSection {\n    margin-top: 350px; } }\n\n@media (max-width: 546px) {\n  .nav {\n    text-align: center; }\n  #landing #title {\n    padding-top: 175px; }\n  .skillHolder .skillTitle {\n    width: 25%; }\n  .skillHolder .progressBar {\n    width: 75%; }\n  h1.heading {\n    font-size: 4em; }\n  .portfolioPiece {\n    width: 98%; }\n  .btn-grp {\n    display: flex;\n    flex-direction: column; }\n  .email-form-group {\n    padding-right: 15px;\n    margin: 5px auto;\n    width: 75vw; } }\n", ""]);
 	
 	// exports
 
@@ -47747,6 +47765,49 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "448c34a56d699c29117adc64c43affeb.woff2";
+
+/***/ },
+/* 508 */
+/*!*****************************************!*\
+  !*** ./src/client/app/continue-link.js ***!
+  \*****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 113);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (props) {
+	  var innerHeight = window.innerHeight;
+	  var bodyHeight = document.body.offsetHeight;
+	  console.log(bodyHeight);
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'continue', style: props.y + innerHeight >= bodyHeight - 50 ? { opacity: '1' } : { opacity: '0' } },
+	    _react2.default.createElement(
+	      'h4',
+	      null,
+	      ' Continue to ',
+	      props.to,
+	      '... '
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: props.to },
+	      _react2.default.createElement('i', { className: 'fa fa-3x fa-arrow-right', 'aria-hidden': 'true' })
+	    )
+	  );
+	};
 
 /***/ }
 /******/ ]);
