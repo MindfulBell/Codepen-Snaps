@@ -2,10 +2,30 @@ $path: '/Users/Tim/Programming/projects';
 $headerFont: 'Playfair Display', serif;
 $pFont: 'Open Sans Condensed', sans-serif;
 $specialFont: 'Radley', serif;
+$blue: #1461A2;
+/**** GENERAL/FONTS/HEADINGS/NAV ****/
 
-/**** GENERAL/FONTS/HEADINGS ****/
 #app {
 	padding: 0;
+}
+
+nav div, .navbar-default {
+	background-color: white;	
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #444;
+    letter-spacing: .2em;
+    transition: all .3s ease;
+    &:hover {
+    	color: $blue;
+    }
+}
+
+#brand {
+	color: #444;
+	font-size: 2em;
+	margin-top: 6px;
 }
 
 .heading {
@@ -35,9 +55,9 @@ h1.heading {
 	1px -1px black;
 }
 
-p, h4, button, a {
+p, h4, button, a, h3 {
 	font-family: $pFont;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 
@@ -64,13 +84,20 @@ p, h4, button, a {
 }
 
 .continue {
+	clear: both;
 	width: 150px;
 	margin: 40px auto;
-	transition: opacity 1s ease-in;
+	padding-top: 50px;
+	transition: all 1s ease-in;
 	text-align: center;
 	font-size: 1.5em;
 	i {
-		color: black;
+		transition: all .2s ease-in-out;
+		color: #444;
+		&:hover {
+			color: $blue; 
+			transform: translateX(15px);
+		}
 	}
 }
 
@@ -96,6 +123,7 @@ p, h4, button, a {
 			border-bottom: 1px solid white;
 			padding-bottom: 50px;
 			text-shadow: 1px 1px 2px black;
+			font-size: 2em;
 		}
 	}
 }
@@ -125,6 +153,9 @@ p, h4, button, a {
 	.aboutItem {
 		width: 30%;
 	}
+	#profPic {
+		max-width: 340px;
+	}
 }
 .skillHolder {
 
@@ -134,24 +165,24 @@ p, h4, button, a {
 	}
 	
 	.progressBar {
-		background-color: #ffe6b3;
+		background-color: #666;
+		opacity: .8;
 		width: 84%;
-		border-radius: 10px;
-		height: 30px;
+		border-radius: 35px;
+		height: 25px;
 		display: inline-block;
-		border: 1px solid #f0b7a1;
+		border: 1px solid black;
+
 		
 		.bar {
+			height: 15px;
 			position: relative;
 			top: 5px;
 			left: 5px;
 			border-radius: 10px;
 			transition: all 1s ease-in-out;
-			background: #f0b7a1; /* Old browsers */
-			background: -moz-linear-gradient(top,  #f0b7a1 0%, #8c3310 45%, #8c3310 58%, #bf6e4e 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(top,  #f0b7a1 0%,#8c3310 45%,#8c3310 58%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to bottom,  #f0b7a1 0%,#8c3310 45%,#8c3310 58%,#bf6e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 ); /* IE6-9 */
+			background-color: $blue; 
+			border: 1px solid white;
 		}
 	}
 
@@ -167,17 +198,53 @@ p, h4, button, a {
 		padding-bottom: 25px;
 	}
 	.portfolio {
+		box-shadow: 0px 0px 20px black;
 	}
 }
 
 
-.portfolioPiece {
-	margin: 5px;
+.portfolioPiece{
+	margin: 3px;
+	float: right;
+	text-align: center;
 	width: 32%;
+	height: 32%;
 	transition: all .3s ease;
 	display: inline-block;
-	img {
+	background-position: 0 0;
+	background-size: cover;
+	&:hover {
+
+	}
+	.portHover {
+		padding-top: 50px;
+		text-align: center;
 		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity .5s ease;
+		background-color: black;
+		color: white;
+		a {
+			color: white;	
+		}
+		i {
+			padding: 8px;
+			transition: all .5s ease;
+			&:hover {
+				color: $blue;
+			}
+		}
+		h3 {
+			font-size: 2em;
+			font-weight: bold;
+		}
+		p {
+			margin-top: 25px;
+		}
+		&:hover {
+			opacity: .8
+		}
 	}
 }
 
@@ -264,9 +331,12 @@ p, h4, button, a {
 		#rightPar {
 			padding: 0;
 		}
+		#profPic {
+			max-width: 300px;
+		}
 	}
 	.skillsSection {
-		margin-top: 350px;
+		margin-top: 450px;
 	}
 }
 
@@ -278,13 +348,10 @@ p, h4, button, a {
 	}
 	
 	// Home/About
-	#landing {
-		#title {
-			padding-top: 175px;
-		}
-	}
+
 
 	.skillHolder {
+
 		.skillTitle {
 			width: 25%;
 		}
@@ -292,6 +359,7 @@ p, h4, button, a {
 			width: 75%;
 		}
 	}
+
 	h1.heading {
 			font-size: 4em;
 		}

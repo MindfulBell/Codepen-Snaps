@@ -41,15 +41,15 @@ export default class Portfolio extends Component {
   render() {
     let works = portfoliodata.map((piece, ind)=>{
     let navURL = `/portfolio/${piece.link}`;
-      return(
-            <NavLink to={navURL} key={ind}>
+      return(            
               <PortfolioPiece 
-                imgSrc={piece.url}
+                key={ind}
+                imgSrc={piece.img}
                 name={piece.name} 
                 skills={piece.skills} 
-                time={piece.time} />
-            </NavLink>
-        
+                time={piece.time} 
+                code={piece.github}
+                link={piece.active} />       
         )
     })
     return (

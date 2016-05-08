@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default (props) => {
-    const width = props.scrollPos < 850 ? 0 : `${props.lvl}%`;
+    const width = props.scrollPos < 1250 ? 0 : `${props.lvl}%`;
     
     // setup diff colors for bars
     // let backgroundColor = (function(lvl){
