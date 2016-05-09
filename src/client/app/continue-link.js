@@ -3,9 +3,8 @@ import { Link } from 'react-router';
 
 
 export default (props) => {
-	let innerHeight = window.innerHeight;
-  let bodyHeight = document.body.offsetHeight;
-  	console.log(bodyHeight)		
+    let innerHeight = window.innerHeight;
+    let bodyHeight = document.body.offsetHeight;
   		return (
 
 		<div className='continue' style={ props.y + innerHeight >= bodyHeight-50 ? {opacity: '1'}:{opacity: '0'}}>
