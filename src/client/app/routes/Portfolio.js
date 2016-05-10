@@ -10,12 +10,15 @@ import ContinueLink from '../continue-link'
 export default class Portfolio extends Component {
   
   //ANIMATE RESIZING THE FLEXBOX?
+  // 'HTML/CSS', 'JavaScript', 'jQuery', 'React', 'Redux', 'Bootstrap', 'AJAX' 
   
+  //WHY IS THE LANDING IMAGE NOT WORKING AGAIN?!
   constructor(props){
     super(props);
     this.state={
       scrollPos: 0,
-      isMounted: false
+      isMounted: false,
+      show: ['React']
     };
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -39,8 +42,15 @@ export default class Portfolio extends Component {
 
 
   render() {
-    let works = portfoliodata.map((piece, ind)=>{
-    let navURL = `/portfolio/${piece.link}`;
+    let works = portfoliodata.filter((piece)=>{
+      //for each element in piece.skills, check if that is present in state.show
+      let found = false;
+        piece.skills.split(',').forEach((skill)=>{
+          console.log(this.state.show.indexOf(skill))
+        })
+
+    }).map((piece, ind)=>{
+      let navURL = `/portfolio/${piece.link}`;
       return(            
               <PortfolioPiece 
                 key={ind}

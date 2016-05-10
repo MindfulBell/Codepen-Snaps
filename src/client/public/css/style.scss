@@ -181,8 +181,8 @@ p, h4, button, a, h3 {
 			left: 5px;
 			border-radius: 10px;
 			transition: all 1s ease-in-out;
-			background-color: $blue; 
-			border: 1px solid white;
+			background-color: white; 
+			border: 1px solid $blue;
 		}
 	}
 
@@ -336,7 +336,7 @@ p, h4, button, a, h3 {
 		}
 	}
 	.skillsSection {
-		margin-top: 450px;
+		margin-top: 350px;
 	}
 }
 
@@ -348,7 +348,10 @@ p, h4, button, a, h3 {
 	}
 	
 	// Home/About
-
+	
+	.skillsSection {
+		margin-top: 450px;
+	}
 
 	.skillHolder {
 
