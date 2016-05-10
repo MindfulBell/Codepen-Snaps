@@ -13,7 +13,7 @@ var config = {
   },
   module : {
     loaders : [
-      { test: /\.scss$/, loaders: ["style", "css", "sass"]},
+      { test: /\.scss$/, loaders: ["style", "css", "sass", 'resolve-url', 'sass?sourceMap']},
       { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
@@ -21,6 +21,9 @@ var config = {
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
     ]
+  },
+  resolveUrlLoader: {
+      absolute: '/prefix'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
