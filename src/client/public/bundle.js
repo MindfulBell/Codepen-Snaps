@@ -24266,7 +24266,12 @@
 	    }
 	  }, {
 	    key: 'handleCheck',
-	    value: function handleCheck(value) {}
+	    value: function handleCheck(value) {
+	      var form = document.getElementById('myForm');
+	      if (form != null) {
+	        console.log(form.children[0]);
+	      }
+	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
@@ -24301,14 +24306,14 @@
 	        ),
 	        _react2.default.createElement(
 	          'form',
-	          { style: { textAlign: 'center' } },
+	          { id: 'myForm', style: { textAlign: 'center' } },
 	          _react2.default.createElement(
 	            'label',
 	            { className: 'checkboxLabels' },
 	            _react2.default.createElement('input', { className: 'checkbox',
 	              type: 'checkbox',
 	              checked: this.state.js,
-	              onChange: this.handleCheck('JavaScript')
+	              onClick: this.handleCheck('JavaScript')
 	            }),
 	            ' JavaScript'
 	          ),

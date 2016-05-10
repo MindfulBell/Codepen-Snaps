@@ -49,7 +49,10 @@ export default class Portfolio extends Component {
   }
 
   handleCheck(value){
-
+    let form = document.getElementById('myForm');
+    if (form != null) {
+      console.log(form.children[0])
+    }
   }
 
 
@@ -78,12 +81,12 @@ export default class Portfolio extends Component {
     return (
       <div className='portfolioPage container-fluid'>
         <h1 className='heading'>PORTFOLIO</h1>
-        <form style={{textAlign: 'center'}}>
+        <form id='myForm' style={{textAlign: 'center'}}>
           <label className='checkboxLabels'>
             <input className='checkbox'
             type="checkbox"
             checked={this.state.js}
-            onChange={this.handleCheck('JavaScript')}
+            onClick={this.handleCheck('JavaScript')}
             /> JavaScript
           </label>                      
           <label className='checkboxLabels'>
