@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { Checkbox, FormGroup, FormControl } from 'react-bootstrap';
 import portfoliodata from '../portfoliodata'
 import PortfolioPiece from './Portfolio-Piece'
 
@@ -18,9 +19,16 @@ export default class Portfolio extends Component {
     this.state={
       scrollPos: 0,
       isMounted: false,
-      show: ['React']
+      show: ['React'],
+      JavaScript: false,
+      jQuery: false,
+      React: false,
+      Redux: false,
+      SASS: false,
+      AJAX: false
     };
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
   }
   
   componentDidMount(){
@@ -40,15 +48,19 @@ export default class Portfolio extends Component {
     }
   }
 
+  handleCheck(value){
+
+  }
+
 
   render() {
     let works = portfoliodata.filter((piece)=>{
       //for each element in piece.skills, check if that is present in state.show
       let found = false;
         piece.skills.split(',').forEach((skill)=>{
-          console.log(this.state.show.indexOf(skill))
+          found = this.state.show.indexOf(skill) > -1 ? true : found;
         })
-
+        return found;
     }).map((piece, ind)=>{
       let navURL = `/portfolio/${piece.link}`;
       return(            
@@ -62,9 +74,54 @@ export default class Portfolio extends Component {
                 link={piece.active} />       
         )
     })
+    // TURN THESE INTO A COMPONENT TO RENDER INDIVIDUALLY
     return (
       <div className='portfolioPage container-fluid'>
         <h1 className='heading'>PORTFOLIO</h1>
+        <form style={{textAlign: 'center'}}>
+          <label className='checkboxLabels'>
+            <input className='checkbox'
+            type="checkbox"
+            checked={this.state.js}
+            onChange={this.handleCheck('JavaScript')}
+            /> JavaScript
+          </label>                      
+          <label className='checkboxLabels'>
+            <input className='checkbox'
+            type="checkbox"
+            checked={this.state.jq}
+            onChange={this.handleCheck('jQuery')}
+            /> jQuery
+          </label>
+          <label className='checkboxLabels'>
+            <input className='checkbox'
+            type="checkbox"
+            checked={this.state.jq}
+            onChange={this.handleCheck('React')}/>            
+            React
+          </label>
+          <label className='checkboxLabels'>
+            <input className='checkbox'
+            type="checkbox"
+            checked={this.state.jq}
+            onChange={this.handleCheck('Redux')}/>            
+            Redux
+          </label>
+          <label className='checkboxLabels'>
+            <input className='checkbox'
+            type="checkbox"
+            checked={this.state.jq}
+            onChange={this.handleCheck('SASS')}/>            
+            SASS
+          </label>
+          <label className='checkboxLabels'>
+            <input className='checkbox'
+            type="checkbox"
+            checked={this.state.jq}
+            onChange={this.handleCheck('AJAX')}/>            
+            AJAX
+          </label>
+        </form>
         <div className='portfolio'>
         	{works}
         </div>

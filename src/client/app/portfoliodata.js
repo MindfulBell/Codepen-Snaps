@@ -2,7 +2,7 @@ let portfoliodata = [
     {
         name: 'Recipe Box',
         img: './public/css/port-images/recipe-box.png',
-        skills: 'HTML/CSS,JavaScript,Bootstrap,React,local storage',
+        skills: 'HTML/CSS,JavaScript,Bootstrap,React,SASS,local storage',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-recipe-box',
         active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/react-recipe-box/blob/master/src/client/index.html'
@@ -11,7 +11,7 @@ let portfoliodata = [
     {
         name: 'Conway\'s Game of Life',
         img: './public/css/port-images/game-of-life.png',
-        skills: 'HTML/CSS,JavaScript,Bootstrap,React',
+        skills: 'HTML/CSS,JavaScript,Bootstrap,SASS,React',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-game-of-life',
         active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/react-game-of-life/blob/master/src/client/index.html'       
@@ -19,7 +19,7 @@ let portfoliodata = [
     {
         name: 'Markdown Previewer',
         img: './public/css/port-images/markdown-previewer.png',
-        skills: 'HTML/CSS,JavaScript,Bootstrap,React,Marked.js',
+        skills: 'HTML/CSS,JavaScript,Bootstrap,React,SASS,Marked.js',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-markdown-previewer',
         active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/react-markdown-previewer/blob/master/src/client/index.html'
@@ -27,7 +27,7 @@ let portfoliodata = [
     {
         name: 'Camper Leaderboard',
         img: './public/css/port-images/fcc-leaderboard.png',
-        skills: 'HTML/CSS,JavaScript,Bootstrap,React,AJAX,axios.js',
+        skills: 'HTML/CSS,JavaScript,Bootstrap,React,AJAX,SASS,axios.js',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-camper-leaderboard',
         active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/react-camper-leaderboard/blob/master/src/client/index.html'
@@ -35,7 +35,7 @@ let portfoliodata = [
     {
         name: 'IGN Widget',
         img: './public/css/port-images/ign-widget.png',
-        skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,React,AJAX',
+        skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,React,SASS,AJAX',
         time: 'late',
         github: 'https://github.com/MindfulBell/ign-application/tree/master/front-end%2,project',
         active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/react-menu-list/blob/master/src/client/index.html'        
