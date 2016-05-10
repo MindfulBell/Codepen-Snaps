@@ -7,8 +7,6 @@ export default (props) => {
     
     //need responsiveness here.
     
-
-    let temporarySrc = '/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/portpic.png'
     return (
         <div className='portfolioPiece ' style={{backgroundImage: `url(${props.imgSrc})`}}>  
 

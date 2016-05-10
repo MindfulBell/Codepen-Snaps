@@ -36,7 +36,7 @@ export default class HomeAbout extends Component {
     ['HTML/CSS', 37], 
     ['JavaScript', 49], 
     ['jQuery', 36], 
-    ['React/Redux', 36], 
+    ['React', 36], 
     ['Bootstrap', 34], 
     ['Git/GitHub', 37]
     ];
@@ -72,7 +72,7 @@ export default class HomeAbout extends Component {
   	        	</p>
           	</div>
           	<div id='profPic' className='aboutItem'>
-          		<img className='img img-responsive'src='/Users/Tim/Programming/projects/portfolio-page/src/client/public/css/me.jpg'/>
+          		<img className='img img-responsive'src='./public/css/Me.jpg'/>
           	</div>
           	<div id='rightPar' className='aboutPar aboutItem'>
   	        	<p>
