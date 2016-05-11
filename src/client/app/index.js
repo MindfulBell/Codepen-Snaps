@@ -11,7 +11,7 @@ import Contact from './routes/Contact'
 import PortfolioPiece from './routes/Portfolio-Piece'
 
 
-render((<Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
+render((<Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
           <Route path='/' component={Layout}>
             <IndexRoute component={HomeAbout}/>
             <Route path='portfolio' component={Portfolio}/>           

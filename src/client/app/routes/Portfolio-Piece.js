@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 
 
 export default (props) => {
- 
-    //actual src lives in this.props.imgSrc
-    
-    //need responsiveness here.
-    
     return (
         <div className='portfolioPiece ' style={{backgroundImage: `url(${props.imgSrc})`}}>  
 

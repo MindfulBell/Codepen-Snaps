@@ -63,12 +63,11 @@ export default class HomeAbout extends Component {
           style={this.state.scrollPos < 400 ? {opacity: '0'} : {opacity: '1'}}>
           	<div id='leftPar' className='aboutPar aboutItem'>
   	        	<p>
-  	        	Bacon ipsum dolor amet cupim andouille biltong chuck. Chicken pancetta pork loin shoulder, 
-  	        	drumstick kielbasa flank rump boudin cow. Prosciutto beef ribs pork belly brisket drumstick, 
-  	        	alcatra bacon pork loin rump. Beef t-bone tenderloin, shankle andouille bresaola short ribs ribeye 
-  	        	meatloaf pork prosciutto biltong. Shoulder ribeye strip steak tri-tip, picanha salami kielbasa. 
-  	        	Filet mignon shank sausage, andouille fatback short ribs doner. Leberkas pig pastrami shankle strip 
-  	        	steak chuck jerky landjaeger pork loin meatloaf biltong.
+  	        	Born and raised in the Garden State, New Jersey, I studied English for my BA and Higher Education Counseling 
+              for my MA. After moving out to the Bay Area and working in higher education for a few years, I am now seeking a new and exciting career. To that
+              end, I have been self teaching web development for almost one year now and have come a long way in this time. It has been
+              a tough task while holding down a demanding full time job in San Francisco, but rest assured, I feel I have gained junior level
+              developer skills and can be a valuable assett in any development team. I primarily have used FreeCodeCamp, Udemy, tutorials, books, CodeMentor, and practice to get stronger at programming. 
   	        	</p>
           	</div>
           	<div id='profPic' className='aboutItem'>
@@ -76,12 +75,11 @@ export default class HomeAbout extends Component {
           	</div>
           	<div id='rightPar' className='aboutPar aboutItem'>
   	        	<p>
-  	        	Bacon ipsum dolor amet cupim andouille biltong chuck. Chicken pancetta pork loin shoulder, 
-  	        	drumstick kielbasa flank rump boudin cow. Prosciutto beef ribs pork belly brisket drumstick, 
-  	        	alcatra bacon pork loin rump. Beef t-bone tenderloin, shankle andouille bresaola short ribs ribeye 
-  	        	meatloaf pork prosciutto biltong. Shoulder ribeye strip steak tri-tip, picanha salami kielbasa. 
-  	        	Filet mignon shank sausage, andouille fatback short ribs doner. Leberkas pig pastrami shankle strip 
-  	        	steak chuck jerky landjaeger pork loin meatloaf biltong.
+  	        	I bring dedication
+              and a keen eye for design to help bolster my front end skills. I am focusing on front-end for now as my skillset includes: JavaScript, jQuery,
+               React w/redux, Bootstrap, CSS/SASS, and AJAX. I have every intention of learning the backend with Node, Mongo, and Express. I am an avid learner
+               and I understand the ever changing, always growing nature of this field. I am ready to constantly grow and learn. When I am not programming, I enjoy
+               hiking, videogames, board games, the beach, my cat, hanging with friends, and eating food. Please contact me if you want an awesome developer on your team! 
   	        	</p>
           	</div>
           </div>

@@ -7,7 +7,7 @@ export default (props) => {
     let bodyHeight = document.body.offsetHeight;
   		return (
 
-		<div className='continue' style={ props.y + innerHeight >= bodyHeight-50 ? {opacity: '1'}:{opacity: '0'}}>
+		<div className='continue' style={ props.y + innerHeight >= bodyHeight-100 ? {opacity: '1'}:{opacity: '0'}}>
       <h4> Continue to {props.to}... </h4>
       <Link to={props.to}><i className="fa fa-3x fa-arrow-right" aria-hidden="true"></i></Link>
     </div>
