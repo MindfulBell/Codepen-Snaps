@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import portfoliodata from '../portfoliodata'
 import PortfolioPiece from './Portfolio-Piece'
-import Checkbox from '../Checkbox'
+import Checkbox from '../checkbox'
 
 import NavLink from './NavLink';
 import ContinueLink from '../continue-link'

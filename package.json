@@ -8,6 +8,7 @@
     "dev": "webpack -d --watch",
     "build": "webpack -p",
     "start": "node src/server.js",
+    "web-serv": "webpack-dev-server . --history-api-fallback"
   },
   "author": "Tim Bell",
   "license": "ISC",
