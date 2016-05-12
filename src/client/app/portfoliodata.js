@@ -1,7 +1,7 @@
 let portfoliodata = [
     {
         name: 'Recipe Box',
-        img: './public/css/port-images/recipe-box.png',
+        img: './src/client/public/css/port-images/recipe-box.png',
         skills: 'HTML/CSS,JavaScript,Bootstrap,React,SASS,local storage',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-recipe-box',
@@ -10,7 +10,7 @@ let portfoliodata = [
     },
     {
         name: 'Conway\'s Game of Life',
-        img: './public/css/port-images/game-of-life.png',
+        img: './src/client/public/css/port-images/game-of-life.png',
         skills: 'HTML/CSS,JavaScript,Bootstrap,SASS,React',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-game-of-life',
@@ -18,7 +18,7 @@ let portfoliodata = [
     },
     {
         name: 'Markdown Previewer',
-        img: './public/css/port-images/markdown-previewer.png',
+        img: './src/client/public/css/port-images/markdown-previewer.png',
         skills: 'HTML/CSS,JavaScript,Bootstrap,React,SASS,Marked.js',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-markdown-previewer',
@@ -26,7 +26,7 @@ let portfoliodata = [
     },
     {
         name: 'Camper Leaderboard',
-        img: './public/css/port-images/fcc-leaderboard.png',
+        img: './src/client/public/css/port-images/fcc-leaderboard.png',
         skills: 'HTML/CSS,JavaScript,Bootstrap,React,AJAX,SASS,axios.js',
         time: 'late',
         github: 'https://github.com/MindfulBell/react-camper-leaderboard',
@@ -34,7 +34,7 @@ let portfoliodata = [
     },
     {
         name: 'IGN Widget',
-        img: './public/css/port-images/ign-widget.png',
+        img: './src/client/public/css/port-images/ign-widget.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,React,SASS,AJAX',
         time: 'late',
         github: 'https://github.com/MindfulBell/ign-application/tree/master/front-end%2,project',
@@ -42,7 +42,7 @@ let portfoliodata = [
     },
     {
         name: 'Simon',
-        img: './public/css/port-images/simon.png',
+        img: './src/client/public/css/port-images/simon.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap',
         time: 'mid',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/simon-game',
@@ -50,7 +50,7 @@ let portfoliodata = [
     },
     {
         name: 'Tic Tac Toe',
-        img: './public/css/port-images/tic-tac-toe.png',
+        img: './src/client/public/css/port-images/tic-tac-toe.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap',
         time: 'mid',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/tic-tac-toe',
@@ -59,7 +59,7 @@ let portfoliodata = [
     },
     {
         name: 'Wikipedia Viewer',
-        img: './public/css/port-images/wiki-viewer.png',
+        img: './src/client/public/css/port-images/wiki-viewer.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,AJAX',
         time: 'mid',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/Wikipedia-API',
@@ -67,7 +67,7 @@ let portfoliodata = [
     },  
     {
         name: 'Star Wars Quiz',
-        img: './public/css/port-images/star-wars-quiz.png',
+        img: './src/client/public/css/port-images/star-wars-quiz.png',
         skills: 'HTML/CSS,JavaScript,Bootstrap,React',
         time: 'mid',
         github: 'https://github.com/MindfulBell/react-quiz',
@@ -75,7 +75,7 @@ let portfoliodata = [
     },   
     {
         name: 'Fitness To-Do List',
-        img: './public/css/port-images/fitness-todo.png',
+        img: './src/client/public/css/port-images/fitness-todo.png',
         skills: 'HTML/CSS,JavaScript,Bootstrap,React,Redux',
         time: 'late',
         github: 'https://github.com/MindfulBell/fitness-todo',
@@ -83,7 +83,7 @@ let portfoliodata = [
             },
     {
         name: 'Random Quote Generator',
-        img: './public/css/port-images/quote-generator.png',
+        img: './src/client/public/css/port-images/quote-generator.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap',
         time: 'early',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/random-quote-generator',
@@ -91,7 +91,7 @@ let portfoliodata = [
     },
     {
         name: 'Portfolio Site',
-        img: './public/css/port-images/portfolio-site.png',
+        img: './src/client/public/css/port-images/portfolio-site.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap',
         time: 'early',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/portfolio-website',
@@ -99,7 +99,7 @@ let portfoliodata = [
     },
     {
         name: 'Weather App',
-        img: './public/css/port-images/weather.png',
+        img: './src/client/public/css/port-images/weather.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,AJAX',
         time: 'early',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/weather-app',
@@ -107,7 +107,7 @@ let portfoliodata = [
     },
     {
         name: 'Pomodoro Timer',
-        img: './public/css/port-images/pomdoro.png',
+        img: './src/client/public/css/port-images/pomdoro.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap',
         time: 'early',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/pomodoro-timer',
@@ -115,7 +115,7 @@ let portfoliodata = [
     },
     {
         name: 'Calculator',
-        img: './public/css/port-images/calculator.png',
+        img: './src/client/public/css/port-images/calculator.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap',
         time: 'early',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/Calculator',
@@ -124,7 +124,7 @@ let portfoliodata = [
     },
     {
         name: 'Twitch API',
-        img: './public/css/port-images/twitch.png',
+        img: './src/client/public/css/port-images/twitch.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,AJAX',
         time: 'mid',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/Twitch-API',
@@ -133,7 +133,7 @@ let portfoliodata = [
     },   
     {
         name: 'Camper News',
-        img: './public/css/port-images/camper-news.png',
+        img: './src/client/public/css/port-images/camper-news.png',
         skills: 'HTML/CSS,JavaScript,jQuery,Bootstrap,AJAX',
         time: 'mid',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/camper-news-API',
