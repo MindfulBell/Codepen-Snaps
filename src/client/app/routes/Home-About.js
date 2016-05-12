@@ -71,7 +71,7 @@ export default class HomeAbout extends Component {
   	        	</p>
           	</div>
           	<div id='profPic' className='aboutItem'>
-          		<img className='img img-responsive'src='./public/css/Me.jpg'/>
+          		<img className='img img-responsive'src='/public/css/Me.jpg'/>
           	</div>
           	<div id='rightPar' className='aboutPar aboutItem'>
   	        	<p>
