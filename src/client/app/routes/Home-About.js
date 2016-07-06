@@ -38,7 +38,9 @@ export default class HomeAbout extends Component {
     ['jQuery', 36], 
     ['React', 36], 
     ['Bootstrap', 34], 
-    ['Git/GitHub', 37]
+    ['Git/GitHub', 37],
+    ['Node/Express', 27],
+    ['MongoDB', 23]
     ];
     
   	let progressBars = ProgressArr.map((skill,ind)=>{
