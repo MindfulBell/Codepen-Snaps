@@ -34,7 +34,7 @@ export default class HomeAbout extends Component {
   render() {
   	const ProgressArr = [
     ['HTML/CSS', 37], 
-    ['JavaScript', 49], 
+    ['JavaScript', 100], 
     ['jQuery', 36], 
     ['React', 36], 
     ['Bootstrap', 34], 
