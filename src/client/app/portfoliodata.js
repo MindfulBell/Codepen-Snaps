@@ -1,11 +1,10 @@
 let portfoliodata = [
-{
-        name: 'Roguelike Dungeon Crawler',
-        img: './src/client/public/css/port-images/roguelike.png',
-        skills: 'HTML/CSS,JavaScript,React,Redux,SASS',
+    {
+        name: 'Image Comparison Widget',
+        img: './src/client/public/css/port-images/img-comparison.png',
+        skills: 'HTML/CSS,JavaScript,jQuery',
         time: 'late',
-        github: 'https://github.com/MindfulBell/roguelike2',
-        active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/roguelike2/blob/master/src/client/index.html'
+        active: 'http://www.ign.com/articles/2016/07/27/how-call-of-duty-modern-warfare-remastered-looks-compared-to-the-original'
     },
     {
         name: 'Roguelike Dungeon Crawler',
