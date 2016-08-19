@@ -79,15 +79,7 @@ let portfoliodata = [
         time: 'mid',
         github: 'https://github.com/MindfulBell/My-Projects/tree/master/Wikipedia-API',
         active: 'http://codepen.io/MindfulBell/full/XmVmLR/'
-    },  
-    {
-        name: 'Star Wars Quiz',
-        img: './src/client/public/css/port-images/star-wars-quiz.png',
-        skills: 'HTML/CSS,JavaScript,Bootstrap,React',
-        time: 'mid',
-        github: 'https://github.com/MindfulBell/react-quiz',
-        active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/react-quiz/blob/master/src/client/index.html'
-    },   
+    },    
     {
         name: 'Fitness To-Do List',
         img: './src/client/public/css/port-images/fitness-todo.png',
@@ -95,7 +87,7 @@ let portfoliodata = [
         time: 'late',
         github: 'https://github.com/MindfulBell/fitness-todo',
         active: 'https://htmlpreview.github.io/?https://github.com/MindfulBell/fitness-todo/blob/master/src/client/index.html'
-            },
+    },
     {
         name: 'Random Quote Generator',
         img: './src/client/public/css/port-images/quote-generator.png',
